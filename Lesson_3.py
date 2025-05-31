@@ -11,8 +11,7 @@ email_from = ''
 email_to = ''
 subject = 'Приглашение!'
 
-letter = """
-From: {0}
+letter = """From: {0}
 To:  {1}
 Subject: {2}
 Content-Type: text/plain; charset="UTF-8";
@@ -42,8 +41,5 @@ my_name = my_name.encode("UTF-8")
 
 server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)
 server.login(login, password)
-server.sendmail(login, email_to, my_name)
+server.sendmail(email_from, email_to, my_name)
 server.quit()
-
-print (my_name)
-
